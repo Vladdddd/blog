@@ -1,25 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import { Header } from "./components";
+import { Home, PdfPage, Posts } from "./pages";
+
+
+const grammarThemes = [
+  "tenses",
+  "prepositions",
+  "adjectives",
+  "nouns",
+  "numerals",
+];
+
+const vocabularyThemes = [
+  "most-useful",
+  "airport",
+  "proffessions",
+  "animals",
+  "clothes",
+  "appearance",
+  "cookware",
+  "containers",
+  "furniture-and-house",
+  "birds-and-insects",
+  "food",
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {grammarThemes.map((el, index) => {
+          return (
+            <Route path={`/theme-posts/${el}`} element={<Posts theme={el}/>} key={el} />
+          );
+        })}
+        {vocabularyThemes.map((el, index) => {
+          return (
+            <Route path={`/theme-posts/${el}`} element={<Posts theme={el}/>} key={el} />
+          );
+        })}
+        <Route path="/pdf" element={<PdfPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
   );
 }
 
