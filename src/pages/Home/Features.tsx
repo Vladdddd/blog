@@ -7,7 +7,7 @@ import success from "../../assets/success.svg";
 export const Features = () => {
   return (
     <div className={s.root}>
-      <h1 className={s.title}>Know about great online learning platform</h1>
+      <h1 className={s.title}>About online learning platform</h1>
       <div className={s.list}>
         <ul>
           <li>

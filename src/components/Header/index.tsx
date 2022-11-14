@@ -1,6 +1,6 @@
 import s from "./Header.module.scss";
-import { NavLink } from "react-router-dom";
 
+import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/HomeOutlined";
 
@@ -11,9 +11,7 @@ const checkActive = (props: { isActive: boolean }) => {
   return props.isActive ? `${s.active}` : ``;
 };
 
-interface OwnProps {
-
-}
+interface OwnProps {}
 
 export const Header: React.FC<OwnProps> = () => {
 

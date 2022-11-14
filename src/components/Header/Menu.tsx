@@ -1,7 +1,7 @@
 import s from "./Header.module.scss";
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,7 +9,6 @@ import MenuItem from "@mui/material/MenuItem";
 type MenuItemType = {
   name: string;
   icon: any;
-  url: string;
 };
 
 interface OwnProps {
@@ -31,7 +30,7 @@ export const HeaderMenu: React.FC<OwnProps> = ({ menu }) => {
   };
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <Button
         id="basic-button"
         className={s.item}
@@ -47,7 +46,7 @@ export const HeaderMenu: React.FC<OwnProps> = ({ menu }) => {
 
       <Menu
         id="basic-menu"
-        className={s.dropdown}
+        className={s.dropdown_items}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -56,13 +55,14 @@ export const HeaderMenu: React.FC<OwnProps> = ({ menu }) => {
         }}
         transitionDuration={300}
       >
-        {menu.menuItems.map((item, index) => {
+        <NavLink to="/posts/tenses" className={s.menu_title}> </NavLink>
+        {menu.menuItems.map((item) => {
           return (
-            <NavLink to={item.url} key={item.url + item.name}>
+            <NavLink to={`/posts/${item.name}`} key={item.name}>
               <MenuItem
                 className={s.dropdown_item}
                 onClick={handleClose}
-                key={item.name + item.url}
+                key={item.name}
               >
                 {item.icon}
                 {item.name}

@@ -1,30 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { Header } from "./components";
-import { Home, PdfPage, Posts } from "./pages";
-
-
-const grammarThemes = [
-  "tenses",
-  "prepositions",
-  "adjectives",
-  "nouns",
-  "numerals",
-];
-
-const vocabularyThemes = [
-  "most-useful",
-  "airport",
-  "proffessions",
-  "animals",
-  "clothes",
-  "appearance",
-  "cookware",
-  "containers",
-  "furniture-and-house",
-  "birds-and-insects",
-  "food",
-];
+import { Home, Posts, Vocabulary } from "./pages";
+import { grammarMenu, vocabularyMenu } from "./components/Header/MenuItems";
 
 function App() {
   return (
@@ -32,18 +10,24 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
-        {grammarThemes.map((el, index) => {
+        {grammarMenu.menuItems.map((item) => {
           return (
-            <Route path={`/theme-posts/${el}`} element={<Posts theme={el}/>} key={el} />
+            <Route
+              path={`/posts/${item.name}`}
+              element={<Posts theme={item.name} />}
+              key={item.name}
+            />
           );
         })}
-        {vocabularyThemes.map((el, index) => {
+        {vocabularyMenu.menuItems.map((item) => {
           return (
-            <Route path={`/theme-posts/${el}`} element={<Posts theme={el}/>} key={el} />
+            <Route
+              path={`/posts/${item.name}`}
+              element={<Vocabulary theme={item.name} />}
+              key={item.name}
+            />
           );
         })}
-        <Route path="/pdf" element={<PdfPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

@@ -1,0 +1,68 @@
+import s from "./Vocabulary.module.scss";
+
+import { Skeleton } from "@mui/material";
+import { useState } from "react";
+
+import { useGetVocabularyQuery } from "../../redux/vocabularyApi";
+import empty from "../../assets/empty.svg";
+import { Letters } from "./Letters";
+
+interface OwnProps {
+  theme: string;
+}
+
+export const Vocabulary: React.FC<OwnProps> = ({ theme }) => {
+  const isMostUseful = theme === "most-useful";
+  const [letter, setLetter] = useState("0");
+  const { data: vocabulary = [], isLoading } = useGetVocabularyQuery({
+    theme: theme,
+    letter: isMostUseful ? letter : "0",
+  });
+
+  return (
+    <div className={s.root}>
+      <div className={s.inner}>
+        <div className={s.top}>
+          <h1>
+            {isLoading ? (
+              <Skeleton variant="text" width={120} height={60} />
+            ) : (
+              theme + " (" + vocabulary.length + ")"
+            )}
+          </h1>
+          {isMostUseful ? (
+            <Letters letter={letter} setLetter={setLetter} />
+          ) : (
+            ""
+          )}
+        </div>
+        {vocabulary.length ? (
+          <div className={s.table_wrapper}>
+            <table>
+              <tbody>
+                <tr>
+                  <th>№</th>
+                  <th>Word</th>
+                  <th>Translation</th>
+                </tr>
+                {vocabulary.map((el: any) => {
+                  return (
+                    <tr key={el.id}>
+                      <td>{el.id + 1}</td>
+                      <td>{el.word}</td>
+                      <td>{el.translation}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className={s.no_data}>
+            {isLoading ? "" : <img src={empty} alt="" />}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};

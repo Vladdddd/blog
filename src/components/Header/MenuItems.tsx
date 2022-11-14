@@ -25,29 +25,24 @@ export const grammarMenu = {
   icon: <ArticleIcon className={s.icon} />,
   menuItems: [
     {
-      name: "Tenses",
+      name: "tenses",
       icon: <AccessTimeIcon className={s.icon} />,
-      url: "/theme-posts/tenses",
     },
     {
-      name: "Prepositions",
+      name: "prepositions",
       icon: <AutoAwesomeMotionIcon className={s.icon} />,
-      url: "/theme-posts/prepositions",
     },
     {
-      name: "Adjectives",
+      name: "adjectives",
       icon: <SubjectIcon className={s.icon} />,
-      url: "/theme-posts/adjectives",
     },
     {
-      name: "Nouns",
+      name: "nouns",
       icon: <TravelExploreIcon className={s.icon} />,
-      url: "/theme-posts/nouns",
     },
     {
-      name: "Numerals",
+      name: "numerals",
       icon: <FormatListNumberedIcon className={s.icon} />,
-      url: "/theme-posts/numerals",
     },
   ],
 };
@@ -57,59 +52,48 @@ export const vocabularyMenu = {
   icon: <ArticleIcon className={s.icon} />,
   menuItems: [
     {
-      name: "Most Useful",
+      name: "most-useful",
       icon: <AbcIcon className={s.icon} />,
-      url: "/theme-posts/most-useful",
     },
     {
-      name: "Airport",
+      name: "airport",
       icon: <AirplanemodeActiveIcon className={s.icon} />,
-      url: "/theme-posts/airport",
     },
     {
-      name: "Professions",
+      name: "proffessions",
       icon: <EngineeringIcon className={s.icon} />,
-      url: "/theme-posts/proffessions",
     },
     {
-      name: "Animals",
+      name: "animals",
       icon: <PetsIcon className={s.icon} />,
-      url: "/theme-posts/animals",
     },
     {
-      name: "Clothes",
+      name: "clothes",
       icon: <CheckroomIcon className={s.icon} />,
-      url: "/theme-posts/clothes",
     },
     {
-      name: "Appearance",
+      name: "appearance",
       icon: <Face6Icon className={s.icon} />,
-      url: "/theme-posts/appearance",
     },
     {
-      name: "Cookware",
+      name: "cookware",
       icon: <BlenderIcon className={s.icon} />,
-      url: "/theme-posts/cookware",
     },
     {
-      name: "Containers",
+      name: "containers",
       icon: <TakeoutDiningIcon className={s.icon} />,
-      url: "/theme-posts/containers",
     },
     {
-      name: "Furniture and house",
+      name: "furniture-and-house",
       icon: <HouseIcon className={s.icon} />,
-      url: "/theme-posts/furniture-and-house",
     },
     {
-      name: "Birds and insects",
+      name: "birds-and-insects",
       icon: <BugReportIcon className={s.icon} />,
-      url: "/theme-posts/birds-and-insects",
     },
     {
-      name: "Food",
+      name: "food",
       icon: <FastfoodIcon className={s.icon} />,
-      url: "/theme-posts/food",
     },
   ],
 };

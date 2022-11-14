@@ -4,21 +4,30 @@ $width-small: 768px;
 $width-mobile: 425px;
 
 @mixin media-font($width, $font-size, $size-change: 0px) {
-  @media(max-width: $width) {
+  @media (max-width: $width) {
     font-size: calc($font-size - $size-change);
   }
 }
 
 .root {
   min-height: 50vh;
-  padding: 5.5% 12.5% 8.5%;
+  padding: 5.5% 12.5%;
+  text-align: start;
 
-  background: var(--grey-background);
-  color: var(--color-text);
+  background: white;
+}
+
+.inner {
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-darkblue);
 
   .title {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
+
+    text-align: center;
+    color: black;
     font-size: var(--font-size-title);
     font-weight: 500;
 
@@ -26,111 +35,82 @@ $width-mobile: 425px;
     @include media-font($width-medium, var(--font-size-title), 8px);
     @include media-font($width-small, var(--font-size-title), 12px);
   }
+}
 
-  .list {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.main_tip {
+  margin: 2.5% 0 0;
+  padding: 0.5% 2.5%;
+  text-align: start;
+  background: var(--color-light-bg);
 
-    .comment_margin {
-      margin-left: 5%;
-    }
+  border-left: 12px solid var(--color-lightgrey);
+  border-right: 12px solid var(--color-lightgrey);
+  border-radius: var(--border-radius-primary);
+}
 
-    .comment {
-      width: 30%;
-      padding: 10px 20px;
+.tips {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5% 0 0;
 
-      background: white;
-      border-radius: var(--border-radius-primary);
+  .tip {
+    position: relative;
+    box-sizing: border-box;
+    width: 32%;
+    padding: 1.5% 2.5%;
 
-      .user {
-        display: flex;
-        justify-content: center;
+    text-align: start;
+    background: var(--color-light-bg);
 
-        margin-bottom: 30px;
-
-        .icon {
-          font-size: var(--font-size-title);
-
-          @include media-font($width-large, var(--font-size-title), 4px);
-          @include media-font($width-medium, var(--font-size-title), 8px);
-          @include media-font($width-small, var(--font-size-title), 12px);
-        }
-
-        .facebook {
-          color: var(--color-blue);
-        }
-
-        .user_info {
-          margin: 0 40px 0 10px;
-          h1 {
-            margin: 0;
-            font-size: var(--font-size-small);
-
-            @include media-font($width-large, var(--font-size-small), 2px);
-            @include media-font($width-medium, var(--font-size-small), 4px);
-            @include media-font($width-small, var(--font-size-small), 6px);
-          }
-
-          p {
-            margin: 0;
-            font-size: var(--font-size-small);
-
-            @include media-font($width-large, var(--font-size-small), 2px);
-            @include media-font($width-medium, var(--font-size-small), 4px);
-            @include media-font($width-small, var(--font-size-small), 6px);
-          }
-        }
-      }
-    }
-  }
-
-  .caption {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 6% 0 0%;
-    padding: 2% 2.5%;
-
-    background: var(--color-tertiary-background);
     border-radius: var(--border-radius-primary);
 
+    .icon {
+      position: absolute;
+      top: 0%;
+      right: 1%;
+      font-size: 50px;
+
+      opacity: 0.25;
+    }
+  }
+}
+
+.text {
+  height: calc(90% - (1.5% * 5));
+  border-bottom: 1.5px solid white;
+
+  h1 {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: flex-start;
+  margin: 3% 0 0;
+  height: 10%;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .userInfo {
+    margin-left: 5%;
     h1 {
-      font-size: var(--font-size-title);
-      font-weight: 500;
-      color: white;
-
-      @include media-font($width-large, var(--font-size-title), 4px);
-      @include media-font($width-medium, var(--font-size-title), 8px);
-      @include media-font($width-small, var(--font-size-title), 12px);
-    }
-
-    .grammar_btn {
-      background: white;
-      
-
-      a {
-        color: var(--color-text);
-      }
-    }
-
-    .vocabulary_btn {
-      margin-left: 20px;
-      background: var(--color-primary);
-      
-
-      a {
-        color: white;
-      }
-    }
-
-    button {
-      padding: 8px 22px;
+      margin: 0;
       font-size: var(--font-size-small);
-
-      @include media-font($width-large, var(--font-size-small), 2px);
-      @include media-font($width-medium, var(--font-size-small), 4px);
-      @include media-font($width-small, var(--font-size-small), 6px);
+    }
+    p {
+      margin: 0;
     }
   }
 }

@@ -17,6 +17,9 @@ $width-mobile: 425px;
 
   .title {
     margin-top: 0;
+    margin-bottom: 42px;
+
+    text-align: center;
     font-size: var(--font-size-title);
     font-weight: 500;
 
@@ -39,6 +42,7 @@ $width-mobile: 425px;
         list-style: none;
 
         .list_id {
+          margin-top: 0px;
           font-size: var(--font-size-medium);
 
           @media (max-width: $width-large) {
@@ -62,6 +66,8 @@ $width-mobile: 425px;
 
           h1 {
             $font-size-list: calc(var(--font-size-medium) - 2px);
+
+            margin-top: 0px; 
             font-size: $font-size-list;
             font-weight: 500;
 
@@ -72,6 +78,8 @@ $width-mobile: 425px;
 
           p {
             $font-size-p: calc(var(--font-size-small) - 2px);
+
+            margin-bottom: 32px;
             font-size: $font-size-p;
 
             @include media-font($width-medium, $font-size-p, 4px);

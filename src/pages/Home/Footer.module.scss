@@ -1,0 +1,44 @@
+.border_right {
+  align-self: center;
+  height: 15px;
+  margin-top: 5px;
+  border-right: 1px solid grey;
+}
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.25% 10%;
+  background: #02093B;
+  color: lightgrey;
+}
+
+.name {
+  width: 25%;
+  text-align: start;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 0 10%;
+
+  p {
+    margin: 0 10px;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  width: 25%;
+
+  .icon {
+    $font-size-icon: calc(var(--font-size-large) - 3px);
+    font-size: $font-size-icon !important;
+    margin: 0 1px !important;
+  }
+}

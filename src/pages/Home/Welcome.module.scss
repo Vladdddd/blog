@@ -30,41 +30,6 @@ $width-mobile: 425px;
   }
 }
 
-.links {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 25%;
-  right: 1.5%;
-
-  .icon_btn {
-    margin-bottom: 10px;
-    background: var(--color-primary);
-
-    .icon {
-      color: white;
-      font-size: calc(var(--font-size-large) + 10px);
-
-      @media (max-width: $width-large) {
-        font-size: var(--font-size-large);
-      }
-
-      @media (max-width: $width-medium) {
-        font-size: calc(var(--font-size-large) - 8px);
-      }
-    }
-  }
-
-  .icon_btn:hover {
-    background: white;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-  }
-
-  .icon:hover {
-    color: var(--color-primary);
-  }
-}
-
 .background {
   position: absolute;
   width: 100%;
@@ -90,31 +55,33 @@ $width-mobile: 425px;
 
 .text {
   .title {
-    width: 60%;
+    $font-size-title: calc(var(--font-size-title) - 6px);
+    width: 50%;
 
-    font-size: var(--font-size-title);
-    font-weight: 700;
+    font-size: $font-size-title;
+    font-weight: 600;
 
-    @include media-font($width-large, var(--font-size-title), 4px);
-    @include media-font($width-medium, var(--font-size-title), 8px);
-    @include media-font($width-small, var(--font-size-title), 12px);
+    @include media-font($width-large, $font-size-title, 4px);
+    @include media-font($width-medium, $font-size-title, 8px);
+    @include media-font($width-small, $font-size-title, 12px);
   }
 
   .name {
     color: var(--color-primary);
 
     .secondary {
-      color: var(--color-text);
+      color: var(--color-darkblue);
     }
   }
 
   .explanation {
-    $font-size-exp: calc(var(--font-size-small) + 3px);
-    width: 45%;
-    margin-top: 3%;
+    $font-size-exp: calc(var(--font-size-small) + 1px);
+    width: 40%;
+    margin-top: 1.5%;
 
     font-size: $font-size-exp;
     font-weight: 400;
+    letter-spacing: .3px;
 
     @include media-font($width-large, $font-size-exp, 3px);
     @include media-font($width-medium, $font-size-exp, 5px);
@@ -122,11 +89,11 @@ $width-mobile: 425px;
   }
 
   .try_button {
-    $font-size-btn: calc(var(--font-size-medium) - 6px);
+    $font-size-btn: calc(var(--font-size-small) + 2px);
     transition: all 0.5s ease;
 
-    margin-top: 2%;
-    padding: 8px 25px;
+    margin-top: 1.5%;
+    padding: 5px 18px;
 
     border: 2px solid var(--color-primary);
     border-radius: 5px;
