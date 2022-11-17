@@ -3,6 +3,12 @@ $width-medium: 1024px;
 $width-small: 768px;
 $width-mobile: 425px;
 
+@mixin media-font($width, $font-size, $size-change: 0px) {
+  @media (max-width: $width) {
+    font-size: calc($font-size - $size-change) !important;
+  }
+}
+
 .root {
   min-height: 100vh;
 }
@@ -27,6 +33,9 @@ $width-mobile: 425px;
       color: var(--color-darkblue);
       font-size: var(--font-size-large);
       font-weight: 500;
+
+      @include media-font($width-medium, var(--font-size-large), 6px);
+      @include media-font($width-mobile, var(--font-size-large), 12px);
     }
     h1::first-letter {
       text-transform: capitalize;
@@ -43,10 +52,21 @@ $width-mobile: 425px;
 
     .btn_filter {
       $font-size-btn: calc(var(--font-size-small) - 2px);
+      
       color: var(--color-primary) !important;
+      font-size: $font-size-btn !important;
       border-color: var(--color-primary) !important;
 
-      font-size: $font-size-btn !important;
+      @include media-font($width-medium, $font-size-btn, 3px);
+      @include media-font($width-mobile, $font-size-btn, 5px);
+
+      @media (max-width: $width-large) {
+        padding: 5px 10px !important;
+      }
+
+      @media (max-width: $width-small) {
+        padding: 3.75px 7.5px !important;
+      }
     }
 
     .btn_filter:hover {
@@ -82,6 +102,10 @@ $width-mobile: 425px;
 
   img {
     width: 50%;
+
+    @media (max-width: $width-small) {
+      width: 100%;
+    }
   }
 }
 

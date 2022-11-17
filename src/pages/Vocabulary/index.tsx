@@ -41,7 +41,7 @@ export const Vocabulary: React.FC<OwnProps> = ({ theme }) => {
             <table>
               <tbody>
                 <tr>
-                  <th>№</th>
+                  <th className={s.th_n}>№</th>
                   <th>Word</th>
                   <th>Translation</th>
                 </tr>

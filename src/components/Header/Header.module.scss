@@ -4,6 +4,12 @@ $width-small: 768px;
 $width-mobile: 425px;
 $item-font-size: calc(var(--font-size-small) + 1px);
 
+@mixin media-font($width, $font-size, $size-change: 0px) {
+  @media (max-width: $width) {
+    font-size: calc($font-size - $size-change) !important;
+  }
+}
+
 div {
   overflow-x: unset !important;
   overflow-y: unset !important;
@@ -18,26 +24,24 @@ a {
 }
 
 .root {
-  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
   padding: 0 2.5%;
 
   background: white;
   color: var(--color-darkblue);
-}
 
-.blog {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
+  @media (max-width: $width-small) {
+    width: 100%;
+  }
 }
 
 .logo {
   display: flex;
-  width: 20%;
+  align-items: center;
+  width: 25%;
   margin: 0;
 
   .first_title {
@@ -58,25 +62,21 @@ a {
   h1 {
     font-size: var(--font-size-large);
 
-    @media(max-width: $width-large) {
-      font-size: calc(var(--font-size-large) - 4px);
-    } 
+    @include media-font($width-large, var(--font-size-large), 4px); 
+    @include media-font($width-medium, var(--font-size-large), 8px); 
+    @include media-font($width-small, var(--font-size-large), 12px); 
+  }
 
-    @media(max-width: $width-medium) {
-      font-size: calc(var(--font-size-large) - 8px);
-    } 
-
-    @media(max-width: $width-small) {
-      font-size: calc(var(--font-size-large) - 12px);
-    } 
+  @media (max-width: $width-small) {
+    display: none;
   }
 }
 
 .blog_items {
   display: flex;
   justify-content: center;
-  width: 80%;
-  gap: 5%;
+  width: 75%;
+  gap: 2.5%;
 
   .item {
     margin: 0;
@@ -86,18 +86,13 @@ a {
     font-size: $item-font-size;
     font-weight: 500;
 
-    @media(max-width: $width-large) {
-      font-size: calc($item-font-size - 2px);
-    }
-    
-    @media(max-width: $width-medium) {
-      font-size: calc($item-font-size - 4px);
-      padding: 8px 3px;
-    }
+    @include media-font($width-large, $item-font-size, 2px);
+    @include media-font($width-medium, $item-font-size, 4px);
+    @include media-font($width-small, $item-font-size, 6px);
+  }
 
-    @media(max-width: $width-small) {
-      font-size: calc($item-font-size - 6px);
-    }
+  @media (max-width: $width-small) {
+    width: 95%;
   }
 }
 
@@ -115,9 +110,7 @@ a {
   width: 150px;
   height: 45px;
 
-  //background: black;
   color: var(--color-darkblue);
-
   font-size: 22px;
 }
 
@@ -129,6 +122,10 @@ a {
   font-size: $item-font-size !important;
   text-transform: uppercase !important;
   font-weight: 500 !important;
+
+  @include media-font($width-large, $item-font-size, 1px);
+  @include media-font($width-medium, $item-font-size, 3px);
+  @include media-font($width-small, $item-font-size, 5px);
 
   @media(max-width: $width-medium) {
     padding-right: 70px !important;

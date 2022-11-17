@@ -32,6 +32,11 @@ $width-mobile: 425px;
     @include media-font($width-large, var(--font-size-title), 4px);
     @include media-font($width-medium, var(--font-size-title), 8px);
     @include media-font($width-small, var(--font-size-title), 12px);
+    @include media-font($width-mobile, var(--font-size-title), 16px);
+
+    @media (max-width: $width-small) {
+      margin-bottom: 21px;
+    }
   }
 }
 
@@ -52,6 +57,16 @@ $width-mobile: 425px;
       margin: 4%;
       height: 92%;
       border-radius: 50%;
+
+      @media (max-width: $width-small) {
+        width: 60%;
+        height: 60%;
+      }
+    }
+
+    @media (max-width: $width-small) {
+      justify-content: center;
+      width: 100%;
     }
   }
 
@@ -68,8 +83,10 @@ $width-mobile: 425px;
         font-size: var(--font-size-large);
         font-weight: 500;
 
-        @include media-font($width-medium, var(--font-size-large), 3px);
-        @include media-font($width-small, var(--font-size-large), 6px);
+        @include media-font($width-large, var(--font-size-large), 3px);
+        @include media-font($width-medium, var(--font-size-large), 6px);
+        @include media-font($width-small, var(--font-size-large), 9px);
+        @include media-font($width-mobile, var(--font-size-large), 12px);
       }
 
       h2 {
@@ -79,6 +96,10 @@ $width-mobile: 425px;
 
         @include media-font($width-medium, var(--font-size-small), 2px);
         @include media-font($width-small, var(--font-size-small), 4px);
+      }
+
+      @media (max-width: $width-small) {
+        text-align: center;
       }
     }
 
@@ -91,12 +112,30 @@ $width-mobile: 425px;
 
       border-radius: var(--border-radius-primary);
 
-      .tile {
+      .tile_left {
         position: absolute;
         left: -28px;
         top: 15%;
         border-bottom: 28px solid #e8f0fe;
         border-left: 28px solid transparent;
+
+        @media (max-width: $width-small) {
+          display: none;
+        }
+      }
+
+      .tile_top {
+        display: none;
+        position: absolute;
+        left: calc(50% - 16px);
+        top: -16px;
+        border-bottom: 16px solid #e8f0fe; 
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+
+        @media (max-width: $width-small) {
+          display: block;
+        }
       }
 
       p {
@@ -108,5 +147,13 @@ $width-mobile: 425px;
         @include media-font($width-small, var(--font-size-small), 4px);
       }
     }
+
+    @media (max-width: $width-small) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $width-small) {
+    flex-direction: column;
   }
 }

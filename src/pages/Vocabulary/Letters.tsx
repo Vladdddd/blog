@@ -119,7 +119,7 @@ export const Letters: React.FC<OwnProps> = ({ letter, setLetter }) => {
 
   return (
     <div>
-      <FormControl sx={{ m: 0, width: 100, height: 40 }}>
+      <FormControl sx={{ m: 0, p: 0, width: 100, height: 40 }} size="small">
         <InputLabel id="select-helper-label">Letter</InputLabel>
         <Select
           labelId="select-helper-label"

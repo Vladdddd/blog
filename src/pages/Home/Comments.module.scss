@@ -34,6 +34,11 @@ $width-mobile: 425px;
     @include media-font($width-large, var(--font-size-title), 4px);
     @include media-font($width-medium, var(--font-size-title), 8px);
     @include media-font($width-small, var(--font-size-title), 12px);
+    @include media-font($width-mobile, var(--font-size-title), 16px);
+
+    @media (max-width: $width-small) {
+      margin-bottom: 21px;
+    }
   }
 }
 
@@ -46,6 +51,15 @@ $width-mobile: 425px;
   border-left: 12px solid var(--color-lightgrey);
   border-right: 12px solid var(--color-lightgrey);
   border-radius: var(--border-radius-primary);
+
+  p {
+    font-size: var(--font-size-small);
+    @include media-font($width-mobile, var(--font-size-small), 4px);
+  }
+
+  @media (max-width: $width-small) {
+    margin-bottom: 5%;
+  }
 }
 
 .tips {
@@ -72,22 +86,39 @@ $width-mobile: 425px;
 
       opacity: 0.25;
     }
+
+    @media (max-width: $width-small) {
+      width: 100%;
+      margin-bottom: 5%;
+    }
+  }
+
+  @media (max-width: $width-small) {
+    flex-direction: column;
   }
 }
 
 .text {
+  $font-size-text: calc(var(--font-size-small) - 2px);
+
   height: calc(90% - (1.5% * 5));
+  padding: 2px;
+
   border-bottom: 1.5px solid white;
 
   h1 {
     width: 80%;
-    font-size: 16px;
+    font-size: $font-size-text;
+
+    @include media-font($width-mobile, $font-size-text, 2px);
   }
 
   p {
-    font-size: 16px;
+    font-size: $font-size-text;
     font-weight: 400;
     line-height: 1.5;
+
+    @include media-font($width-mobile, $font-size-text, 2px);
   }
 }
 
@@ -101,16 +132,28 @@ $width-mobile: 425px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+
+    @media (max-width: $width-small) {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   .userInfo {
     margin-left: 5%;
+
     h1 {
       margin: 0;
       font-size: var(--font-size-small);
+
+      @include media-font($width-mobile, var(--font-size-small), 2px);
     }
+
     p {
       margin: 0;
+      font-size: var(--font-size-small);
+
+      @include media-font($width-mobile, var(--font-size-small), 2px);
     }
   }
 }

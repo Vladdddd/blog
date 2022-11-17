@@ -64,6 +64,11 @@ $width-mobile: 425px;
     @include media-font($width-large, $font-size-title, 4px);
     @include media-font($width-medium, $font-size-title, 8px);
     @include media-font($width-small, $font-size-title, 12px);
+    @include media-font($width-mobile, $font-size-title, 16px);
+
+    @media (max-width: $width-small) {
+      width: 70%;
+    }
   }
 
   .name {
@@ -86,6 +91,10 @@ $width-mobile: 425px;
     @include media-font($width-large, $font-size-exp, 3px);
     @include media-font($width-medium, $font-size-exp, 5px);
     @include media-font($width-small, $font-size-exp, 7px);
+
+    @media (max-width: $width-small) {
+      display: none;
+    }
   }
 
   .try_button {
@@ -109,7 +118,12 @@ $width-mobile: 425px;
 
     @include media-font($width-large, $font-size-btn, 2px);
     @include media-font($width-medium, $font-size-btn, 4px);
-    @include media-font($width-medium, $font-size-btn, 6px);
+    @include media-font($width-mobile, $font-size-btn, 8px);
+
+    @media (max-width: $width-small) {
+      margin-top: 4.5%;
+      padding: 2.5px 9px; 
+    }
   }
 
   .try_button:hover {

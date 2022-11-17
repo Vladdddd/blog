@@ -15,7 +15,8 @@ export const Teacher = () => {
             <h2>Teacher of EnglishBlog</h2>
           </div>
           <div className={s.text}>
-            <div className={s.tile}></div>
+            <div className={s.tile_left}></div>
+            <div className={s.tile_top}></div>
             <p>
               Hi there! Welcome to EnglishBlog! Thanks for visiting this
               website. I am Liliia, acting teacher and interpreter. And

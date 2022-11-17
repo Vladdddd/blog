@@ -26,6 +26,11 @@ $width-mobile: 425px;
     @include media-font($width-large, var(--font-size-title), 4px);
     @include media-font($width-medium, var(--font-size-title), 8px);
     @include media-font($width-small, var(--font-size-title), 12px);
+    @include media-font($width-mobile, var(--font-size-title), 16px);
+
+    @media (max-width: $width-small) {
+      margin-bottom: 21px;
+    }
   }
 
   .list {
@@ -73,7 +78,7 @@ $width-mobile: 425px;
 
             @include media-font($width-large, $font-size-list, 2px);
             @include media-font($width-medium, $font-size-list, 6px);
-            @include media-font($width-small, $font-size-list, 10px);
+            @include media-font($width-small, $font-size-list, 8px);
           }
 
           p {
@@ -82,10 +87,14 @@ $width-mobile: 425px;
             margin-bottom: 32px;
             font-size: $font-size-p;
 
-            @include media-font($width-medium, $font-size-p, 4px);
-            @include media-font($width-small, $font-size-p, 6px);
+            @include media-font($width-medium, $font-size-p, 2px);
+            @include media-font($width-small, $font-size-p, 4px);
           }
         }
+      }
+
+      @media (max-width: $width-small) {
+        width: 100%;
       }
     }
 
@@ -98,6 +107,10 @@ $width-mobile: 425px;
 
       img {
         width: 42.5%;
+      }
+    
+      @media (max-width: $width-small) {
+        display: none;
       }
     }
   }
