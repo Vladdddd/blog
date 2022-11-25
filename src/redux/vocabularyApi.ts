@@ -11,7 +11,7 @@ export const vocabularyApi = createApi({
   }),
   endpoints: (build) => ({
     getVocabulary: build.query({
-      query: ({theme, letter}) => `/${theme}/${letter}`,
+      query: ({ theme, letter }) => `/${theme}/${letter}`,
       providesTags: (result) =>
         result
           ? [
@@ -26,6 +26,4 @@ export const vocabularyApi = createApi({
   }),
 });
 
-export const {
-  useGetVocabularyQuery
-} = vocabularyApi;
+export const { useGetVocabularyQuery } = vocabularyApi;

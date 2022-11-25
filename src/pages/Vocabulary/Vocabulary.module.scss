@@ -10,10 +10,19 @@ $width-mobile: 425px;
 }
 
 .no_data {
+  margin-top: 2.5%;
   text-align: center;
 
   img {
     width: 50%;
+
+    @media (max-width: $width-small) {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: $width-small) {
+    margin-top: 7.5%;
   }
 }
 
@@ -28,9 +37,14 @@ $width-mobile: 425px;
 
 .inner {
   width: 85%;
-  margin: 2% auto;
+  margin: auto;
+  padding: 2% 0;
 
   border-radius: var(--border-radius-primary);
+
+  @media (max-width: $width-small) {
+    padding: 4% 0%;
+  }
 }
 
 .top {
@@ -40,6 +54,7 @@ $width-mobile: 425px;
 
   padding: 1.8% 2%;
   background: white;
+  border-radius: var(--border-radius-primary);
 
   h1 {
     margin: 0;

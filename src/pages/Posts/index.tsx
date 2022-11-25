@@ -6,6 +6,7 @@ import { useState } from "react";
 import { TensesButtons } from "./TensesButtons";
 import { Post } from "../../components";
 import empty from "../../assets/empty.svg";
+import error_img from "../../assets/error.svg";
 import { PostSkeleton } from "../../components/Post/Skeleton";
 import { useGetThemePostsQuery } from "../../redux/postsApi";
 
@@ -38,9 +39,18 @@ const otherThemes: any = {
 
 export const Posts: React.FC<OwnProps> = ({ theme }) => {
   const [tenseId, setTenseId] = useState(tensesOptions[0].id);
-  const { data: posts = [], isLoading } = useGetThemePostsQuery({
+  const {
+    data: posts = [],
+    isLoading,
+    isError,
+    error,
+  } = useGetThemePostsQuery({
     theme: theme === "tenses" ? tenseId : otherThemes[theme],
   });
+
+  if (isError) {
+    console.warn(error);
+  }
 
   return (
     <div className={s.root}>
@@ -75,12 +85,24 @@ export const Posts: React.FC<OwnProps> = ({ theme }) => {
         ) : posts.length ? (
           <div className={s.posts}>
             {posts.map((post: PostType) => {
-              return <Post key={post._id} post={post} id={null} />;
+              return theme === "tenses" ? (
+                <Post key={post._id} post={post} id={null} />
+              ) : theme === "prepositions" ? (
+                <div>Prepositions</div>
+              ) : (
+                ""
+              );
             })}
           </div>
         ) : (
           <div className={s.no_data}>
-            {isLoading ? "" : <img src={empty} alt="" />}
+            {isLoading ? (
+              ""
+            ) : isError ? (
+              <img src={error_img} alt="" />
+            ) : (
+              <img src={empty} alt="" />
+            )}
           </div>
         )}
       </div>

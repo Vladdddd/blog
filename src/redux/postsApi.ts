@@ -24,7 +24,7 @@ export const postsApi = createApi({
           : [{ type: "Posts", id: "LIST" }],
     }),
     getThemePosts: build.query({
-      query: ({theme}) => `/${theme}`,
+      query: ({ theme }) => `/${theme}`,
       providesTags: (result) =>
         result
           ? [
@@ -39,7 +39,4 @@ export const postsApi = createApi({
   }),
 });
 
-export const {
-  useGetPostsQuery,
-  useGetThemePostsQuery,
-} = postsApi;
+export const { useGetPostsQuery, useGetThemePostsQuery } = postsApi;

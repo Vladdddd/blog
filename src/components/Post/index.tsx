@@ -81,36 +81,3 @@ export const Post: React.FC<OwnProps> = ({ post, id }) => {
     </div>
   );
 };
-
-/*
-return (
-    <div className={s.root}>
-      <div className={s.inner}>
-        <div className={s.top}>
-          <h1 className={s.title}>{postTitle}</h1>
-          <p className={s.explain}>{post.text}</p>
-        </div>
-        <div className={s.border_title}></div>
-        <div className={s.description}>
-          <div className={s.desc_item}>
-            <CheckIcon className={s.icon} />
-            <p>{post.verb}</p>
-          </div>
-          <div className={s.desc_item}>
-            <CheckIcon className={s.icon} />
-            <p>{post.markers}</p>
-          </div>
-          <div className={s.desc_item}>
-            <CheckIcon className={s.icon} />
-            <p>{post.example}</p>
-          </div>
-        </div>
-        <div className={s.learn_more}>
-          <a href={post.url} target="_blank" rel="noreferrer">
-            <button className={s.btn}>Learn more</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-*/

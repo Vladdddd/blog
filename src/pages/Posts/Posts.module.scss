@@ -9,6 +9,23 @@ $width-mobile: 425px;
   }
 }
 
+.no_data {
+  margin-top: 2.5%;
+  text-align: center;
+
+  img {
+    width: 50%;
+
+    @media (max-width: $width-small) {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: $width-small) {
+    margin-top: 7.5%;
+  }
+}
+
 .root {
   min-height: 100vh;
 }
@@ -39,6 +56,10 @@ $width-mobile: 425px;
     }
     h1::first-letter {
       text-transform: capitalize;
+    }
+
+    @media (max-width: $width-small) {
+      width: 95%;
     }
   }
 
@@ -83,6 +104,10 @@ $width-mobile: 425px;
       background: var(--color-primary) !important;
     }
   }
+
+  @media (max-width: $width-small) {
+    padding: 4% 0%;
+  }
 }
 
 .posts {
@@ -95,17 +120,9 @@ $width-mobile: 425px;
   width: 100%;
   margin: 0;
   padding-top: 2%;
-}
 
-.no_data {
-  text-align: center;
-
-  img {
-    width: 50%;
-
-    @media (max-width: $width-small) {
-      width: 100%;
-    }
+  @media (max-width: $width-small) {
+    padding: 4% 0%;
   }
 }
 

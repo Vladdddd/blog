@@ -4,7 +4,6 @@ import { Features } from "./Features";
 import { Welcome } from "./Welcome";
 import { Comments } from "./Comments";
 import { Teacher } from "./Teacher";
-import { Footer } from "./Footer";
 
 export const Home = () => {
   return (
@@ -13,7 +12,6 @@ export const Home = () => {
       <Features />
       <Teacher />
       <Comments />
-      <Footer />
     </div>
   );
 };

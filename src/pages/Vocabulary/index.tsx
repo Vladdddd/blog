@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { useGetVocabularyQuery } from "../../redux/vocabularyApi";
 import empty from "../../assets/empty.svg";
+import error_img from "../../assets/error.svg";
 import { Letters } from "./Letters";
 
 interface OwnProps {
@@ -14,10 +15,19 @@ interface OwnProps {
 export const Vocabulary: React.FC<OwnProps> = ({ theme }) => {
   const isMostUseful = theme === "most-useful";
   const [letter, setLetter] = useState("0");
-  const { data: vocabulary = [], isLoading } = useGetVocabularyQuery({
+  const {
+    data: vocabulary = [],
+    isLoading,
+    isError,
+    error,
+  } = useGetVocabularyQuery({
     theme: theme,
     letter: isMostUseful ? letter : "0",
   });
+
+  if (isError) {
+    console.warn(error);
+  }
 
   return (
     <div className={s.root}>
@@ -59,7 +69,13 @@ export const Vocabulary: React.FC<OwnProps> = ({ theme }) => {
           </div>
         ) : (
           <div className={s.no_data}>
-            {isLoading ? "" : <img src={empty} alt="" />}
+            {isLoading ? (
+              ""
+            ) : isError ? (
+              <img src={error_img} alt="" />
+            ) : (
+              <img src={empty} alt="" />
+            )}
           </div>
         )}
       </div>

@@ -15,6 +15,7 @@ $width-mobile: 425px;
   min-height: 90vh;
   margin: auto;
 
+  border-top: 2px solid lightcyan;
   z-index: 1;
 
   @media (max-width: $width-large) {
@@ -26,7 +27,7 @@ $width-mobile: 425px;
   }
 
   @media (max-width: $width-small) {
-    min-height: 50vh;
+    min-height: 75vh;
   }
 }
 
@@ -49,25 +50,29 @@ $width-mobile: 425px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0% 12.5%;
+  padding: 2.75% 12.5%;
   color: var(--color-text);
+
+  @media (max-width: $width-small) {
+    padding: 6.5% 12.5%
+  }
 }
 
 .text {
   .title {
     $font-size-title: calc(var(--font-size-title) - 6px);
     width: 50%;
+    margin: 0;
 
     font-size: $font-size-title;
     font-weight: 600;
 
     @include media-font($width-large, $font-size-title, 4px);
     @include media-font($width-medium, $font-size-title, 8px);
-    @include media-font($width-small, $font-size-title, 12px);
-    @include media-font($width-mobile, $font-size-title, 16px);
+    @include media-font($width-small, $font-size-title, 10px);
 
-    @media (max-width: $width-small) {
-      width: 70%;
+    @media (max-width: $width-mobile) {
+      width: 100%;
     }
   }
 
@@ -90,9 +95,8 @@ $width-mobile: 425px;
 
     @include media-font($width-large, $font-size-exp, 3px);
     @include media-font($width-medium, $font-size-exp, 5px);
-    @include media-font($width-small, $font-size-exp, 7px);
 
-    @media (max-width: $width-small) {
+    @media (max-width: $width-mobile) {
       display: none;
     }
   }
@@ -118,11 +122,11 @@ $width-mobile: 425px;
 
     @include media-font($width-large, $font-size-btn, 2px);
     @include media-font($width-medium, $font-size-btn, 4px);
-    @include media-font($width-mobile, $font-size-btn, 8px);
+    @include media-font($width-small, $font-size-btn, 6px);
 
-    @media (max-width: $width-small) {
-      margin-top: 4.5%;
-      padding: 2.5px 9px; 
+    @media (max-width: $width-mobile) {
+      margin-top: 12.5%;
+      padding: 6px 22px; 
     }
   }
 
@@ -135,5 +139,9 @@ $width-mobile: 425px;
     a {
       color: var(--color-primary) !important;
     }
+  }
+
+  @media (max-width: $width-mobile) {
+    text-align: center;
   }
 }

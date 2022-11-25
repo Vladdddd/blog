@@ -12,4 +12,4 @@ export const store = configureStore({
     getDefaultMiddlware().concat(postsApi.middleware, vocabularyApi.middleware),
 });
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;

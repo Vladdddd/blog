@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 import { Home, Posts, Vocabulary } from "./pages";
 import { grammarMenu, vocabularyMenu } from "./components/Header/MenuItems";
 
@@ -30,6 +30,7 @@ function App() {
         })}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <Footer />
     </>
   );
 }

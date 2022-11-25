@@ -20,7 +20,7 @@ export const Welcome = () => {
             grammar, English speaking, English writing, English idioms
           </h1>
           <Button className={s.try_button} variant="contained">
-            <Link to="/theme-posts/tenses">Get started</Link>
+            <Link to="/posts/tenses">Get started</Link>
           </Button>
         </div>
       </div>

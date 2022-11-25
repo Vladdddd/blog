@@ -27,7 +27,7 @@ $width-mobile: 425px;
 
   width: 85%;
   margin: 0;
-  padding: 0.25% 7.5%;
+  padding: 0.75% 7.5%;
 
   background: #02093B;
   color: lightgrey;
@@ -44,6 +44,7 @@ $width-mobile: 425px;
 
 .name {
   width: 22.5%;
+  margin: 0;
 
   font-size: var(--font-size-small);
   text-align: start;

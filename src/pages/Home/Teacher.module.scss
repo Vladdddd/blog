@@ -38,6 +38,10 @@ $width-mobile: 425px;
       margin-bottom: 21px;
     }
   }
+
+  @media (max-width: $width-small) {
+    padding: 5.5% 5%;
+  }
 }
 
 .teacher {

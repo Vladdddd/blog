@@ -3,9 +3,13 @@ import s from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/HomeOutlined";
+import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 
 import { HeaderMenu } from "./Menu";
 import { grammarMenu, vocabularyMenu } from "./MenuItems";
+
+const pdf =
+  "https://drive.google.com/drive/folders/1hV62J0YzGCEmtNkTbx9yWbAdft5RCiSo?usp=share_link";
 
 const checkActive = (props: { isActive: boolean }) => {
   return props.isActive ? `${s.active}` : ``;
@@ -31,6 +35,12 @@ export const Header: React.FC<OwnProps> = () => {
         </NavLink>
         <HeaderMenu menu={grammarMenu} />
         <HeaderMenu menu={vocabularyMenu} />
+      </div>
+
+      <div className={s.pdf}>
+        <a href={pdf} target="_blank" rel="noreferrer">
+          <PictureAsPdfOutlinedIcon className={s.pdf_icon} />
+        </a>
       </div>
     </div>
   );

@@ -3,12 +3,15 @@ import s from "./Posts.module.scss";
 
 interface OwnProps {
   tenseId: string;
-  setTenseId: (tenseId: string) => any
+  setTenseId: (tenseId: string) => any;
   tensesOptions: Array<any>;
 }
 
-export const TensesButtons: React.FC<OwnProps> = ({tenseId, setTenseId, tensesOptions}) => {
-
+export const TensesButtons: React.FC<OwnProps> = ({
+  tenseId,
+  setTenseId,
+  tensesOptions,
+}) => {
   const handleClick = (tense: string) => {
     if (
       tense === tensesOptions[0].id ||
